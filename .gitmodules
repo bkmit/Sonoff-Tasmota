@@ -1,0 +1,3 @@
+[submodule "lib/process-control"]
+	path = lib/process-control
+	url = https://github.com/colinl/process-control.git
