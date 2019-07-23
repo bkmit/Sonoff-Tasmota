@@ -526,7 +526,7 @@
 #define D_SENSOR_SAIR_TX       "SAir Tx"
 #define D_SENSOR_SPI_CS        "SPI CS"
 #define D_SENSOR_SPI_DC        "SPI DC"
-#define D_SENSOR_BACKLIGHT     "BkLight"
+#define D_SENSOR_BACKLIGHT     "Backlight"
 #define D_SENSOR_PMS5003       "PMS5003"
 #define D_SENSOR_SDS0X1_RX     "SDS0X1 Rx"
 #define D_SENSOR_SDS0X1_TX     "SDS0X1 Tx"

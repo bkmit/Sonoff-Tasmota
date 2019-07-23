@@ -86,15 +86,17 @@ void Ssd1306InitDriver(void)
   }
 
   if (XDSP_02 == Settings.display_model) {
-    int8_t reset_pin = pin[GPIO_OLED_RESET];
-    if (reset_pin >= 99) {
-      reset_pin = -1;
+    if ((Settings.display_width != 96) || (Settings.display_width != 128)) {
+      Settings.display_width = 128;
     }
-    uint8_t display_height = 64;
-    if (Settings.display_address[0] == OLED_ADDRESS1) {
-      display_height = 32;
+    if ((Settings.display_height != 16) || (Settings.display_height != 32) || (Settings.display_height != 64)) {
+      Settings.display_height = 64;
     }
-    oled = new Adafruit_SSD1306(128, display_height, &Wire, reset_pin);
+    int8_t reset_pin = -1;
+    if (pin[GPIO_OLED_RESET] < 99) {
+      reset_pin = pin[GPIO_OLED_RESET];
+    }
+    oled = new Adafruit_SSD1306(Settings.display_width, Settings.display_height, &Wire, reset_pin);
     oled->begin(SSD1306_SWITCHCAPVCC, Settings.display_address[0]);
 
 #ifdef USE_DISPLAY_MODES1TO5
